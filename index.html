@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Paloma vs. Halcón</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Juego de la Paloma vs. Halcón</h1>
+    <div id="game-container">
+        <p>Elige cuántas rondas jugar:</p>
+        <div>
+            <label for="num-rondas">Número de rondas:</label>
+            <input type="number" id="num-rondas" min="1" value="5">
+        </div>
+        <p>Elige tu estrategia para la ronda actual:</p>
+        <div>
+            <label for="player-strategy">Jugador:</label>
+            <select id="player-strategy">
+                <option value="paloma">Paloma</option>
+                <option value="halcon">Halcón</option>
+            </select>
+        </div>
+        <button onclick="calcularResultado()">Calcular Resultado</button>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+        
+        <!-- Resultados del juego -->
+        <div id="resultado"></div>
+        <div id="puntaje-acumulado"></div>
+        
+        <!-- Contenedor para mostrar el video -->
+        <div id="video-container" style="margin-top: 20px;">
+            <iframe id="video-iframe" width="560" height="315" style="display: none;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
