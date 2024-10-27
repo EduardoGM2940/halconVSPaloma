@@ -13,7 +13,7 @@ function iniciarJuego() {
     document.getElementById("num-rondas").disabled = true;
     document.getElementById("resultado").innerText = "";
     document.getElementById("puntaje-acumulado").innerText = "";
-    document.getElementById("video-iframe").style.display = "none"; // Ocultar el video al iniciar
+    document.getElementById("gif-img").style.display = "none"; // Ocultar el GIF al iniciar
 }
 
 function calcularResultado() {
@@ -38,13 +38,12 @@ function calcularResultado() {
         "halcon-halcon": [-1, -1]
     };
 
-    const videos = {
-    "paloma-paloma": "https://www.youtube.com/embed/Nxgo1XHlock?start=35&end=44&autoplay=1&controls=0&rel=0", // Reemplaza con enlaces específicos
-    "paloma-halcon": "https://www.youtube.com/embed/U4p-6ywufB4?autoplay=1&controls=0&rel=0&start=6&end=10", // Agrega otros enlaces en formato embed
-    "halcon-paloma": "https://www.youtube.com/embed/U4p-6ywufB4?autoplay=1&controls=0&rel=0&start=6&end=10",
-    "halcon-halcon": "https://www.youtube.com/embed/U4p-6ywufB4?autoplay=1&controls=0&rel=0&start=0&end=5"
-};
-
+    const gifs = {
+        "paloma-paloma": "https://i.gifer.com/SAzs.gif",
+        "paloma-halcon": "https://i.pinimg.com/originals/28/0e/bc/280ebc35f36d9571f08cd61ab422235d.gif",
+        "halcon-paloma": "https://i.makeagif.com/media/5-18-2021/BVauIE.gif",
+        "halcon-halcon": "https://64.media.tumblr.com/c72cbb396d266d601c7e6327f716691d/tumblr_pas1v4vVzV1x5kx98o3_400.gif"
+    };
 
     const key = `${player}-${computer}`;
     const pagos = payoff[key];
@@ -54,9 +53,9 @@ function calcularResultado() {
         puntajeComputadora += pagos[1];
         resultado = `Ronda ${rondaActual + 1}: Tú elegiste ${player}, la computadora eligió ${computer}.\nResultado de la ronda: Jugador: ${pagos[0]} puntos, Computadora: ${pagos[1]} puntos.`;
         
-        // Mostrar el video correspondiente en el iframe
-        document.getElementById("video-iframe").src = videos[key];
-        document.getElementById("video-iframe").style.display = "block"; // Mostrar el iframe
+        // Mostrar el GIF correspondiente en el <img>
+        document.getElementById("gif-img").src = gifs[key];
+        document.getElementById("gif-img").style.display = "block"; // Mostrar la imagen
     } else {
         resultado = "Opción no válida.";
     }
@@ -85,3 +84,4 @@ function reiniciarJuego() {
 }
 
 reiniciarJuego();
+
